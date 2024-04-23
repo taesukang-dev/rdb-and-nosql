@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/kms
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/kms
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    pool:
+      enabled: true
+      initial-size: 10
+      max-size: 10
+      max-acquire-time: 5s
+      max-create-connection-time: 5s
+      max-idle-time: 60m # max-wait-time 이랑 같이 챙겨 줘야 함.
+      max-life-time: 60m
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+
+logging:
+  level:
+    org.springframework.data.mongodb: DEBUG
+    io.r2dbc.spi: DEBUG
+    io.r2dbc.mysql: DEBUG
+    org.springframework.data.r2dbc: DEBUG
