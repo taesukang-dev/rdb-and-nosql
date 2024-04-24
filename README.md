@@ -1,4 +1,5 @@
 # RDB (MySQL), NoSQL (MongoDB) performance test (mainly select)
+- <a href="https://liltdevs.tistory.com/213">블로그 글</a>
 - 실행 환경 spec
   - 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz   2.80 GHz
   - RAM : 16GB
