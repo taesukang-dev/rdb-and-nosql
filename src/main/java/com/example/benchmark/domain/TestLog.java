@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Document(collection = "test-log")
 public class TestLog {
     @Id
-    @Column("seq")
+    @Column("id")
     private String id;
     private String title;
     private String content;
