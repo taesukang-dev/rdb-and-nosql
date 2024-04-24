@@ -62,7 +62,7 @@
   - pk select
     - mongo 평균 : 0.067, mysql 평균 : 0.01 -> mysql 85% 우세
   - index 가 없는 column select
-    - mongo 평균 : 13.5, mysql 평균 : 23.5 -> mongo 42% 우세
+    - mongo 평균 : 4.5, mysql 평균 : 7.8 -> mongo 42% 우세
   - index 가 있는 column select
     - mongo 평균 : 0.0053, mysql 평균 : 0.205 -> mongo 97% 우세
   - paging
