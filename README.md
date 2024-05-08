@@ -1,4 +1,5 @@
 # RDB (MySQL), NoSQL (MongoDB) performance test (mainly select)
+- <a href="https://liltdevs.tistory.com/213">블로그 글</a>
 - 실행 환경 spec
   - 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz   2.80 GHz
   - RAM : 16GB
@@ -72,8 +73,8 @@
 - 대체로 mongo 우세
   - index 를 b tree 로 사용하는 것은 동일하나, bson 으로 저장하면서 io 시 cost 가 낮은 게 이점이지 않나 생각
     - page 로 저장할 때 record byte 계산, tablespace 구조 맞추는 등의 작업이 필요하지만 bson 은 걍 때려 넣을듯...
-  - memetable, lsm tree 를 쓰면서 loose index scan 처럼 기본적으로 동작하고 추가로 bloom filter 가 데이터 존재 여부를 거르는 것도 성능에 한 몫 하는 듯
-    - 또, 대부분의 동작을 비동기적으로 처리하기도 하고(memory to sstable, sstable to disk), hot data 를 memory 에 올려놓고 찾기 쉬운 구조니까 memory 관리에 유의 해야 할 듯
+  - ~memetable, lsm tree 를 쓰면서 loose index scan 처럼 기본적으로 동작하고 추가로 bloom filter 가 데이터 존재 여부를 거르는 것도 성능에 한 몫 하는 듯~
+    - ~또, 대부분의 동작을 비동기적으로 처리하기도 하고(memory to sstable, sstable to disk), hot data 를 memory 에 올려놓고 찾기 쉬운 구조니까 memory 관리에 유의 해야 할 듯~
       - MongoDB 는 caching 될 때 메모리를 적게 사용하기 위한 구조로 변환해서 적재, WiredTiger storage engine 및 block manager
     - 근데 MySQL 도 비슷하지 않나 싶긴 한데... (change buffer, redo log...)
   - pk select 할 때에는 mysql 이 더 우세했는데, clustering key 저장 / 동작 되는게 이점을 가지는 듯
